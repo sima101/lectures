@@ -144,7 +144,11 @@ I save a list of these dates in the variable `dates_list`.
 
 - **Q1.** In Python, what date would I get if I ran ```dates_list[2]```
 
+1995
+
 - **Q2.** What would I get in R for ```dates_list[2]```?
+
+1994
 
 
 ```{r}
@@ -174,8 +178,8 @@ print(num_list$two)
 # By using the double brackets, the list structure is dropped
 print(num_list[["two"]])
 
-print(class(num_list["two"]))
-print(class(num_list[["two"]]))
+print(class(num_list["two"])) #one bracket = list
+print(class(num_list[["two"]])) #double brackets = character
 ```
 
 It's easy to pull out specific entries in a vector using `[]`. For example:
@@ -190,9 +194,9 @@ math_scores[3]
 # Slicing (Inclusive)
 math_scores[1:3]
 # Remove by index
-math_scores[-(4:5)]
+math_scores[-(4:5)] #except fourth and fifth 
 # Filter by a condition
-math_scores[which(verbal_scores >= 90)]
+math_scores[which(verbal_scores >= 90)] #2nd and 3rd indexes 
 # Set a value
 math_scores[3] <- 92
 
@@ -233,6 +237,8 @@ if (x < y) {
     print("no number is smaller")
 } # the code in the curly brackets will run if the conditional statement is true
 
+
+#elif in Python
 ```
 
 ```{r}
@@ -268,7 +274,7 @@ for (i in 1:length(chr_vec)) { # for i in range(0, len(chr_vec))
 ```{r}
 # Functions also make use of different brackets
 
-# To read more about function documenantion in R, see:
+# To read more about function documentation in R, see:
 # https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html
 # https://cran.r-project.org/web/packages/docstring/vignettes/docstring_intro.html
 # https://josephcrispell.github.io/2021/07/26/creating-R-docstring.html
@@ -356,8 +362,22 @@ for i in range(1, 101):
         ls.append(i)
 print(ls)
 ```
-
 _Your cell here._
+
+```{r}
+lst <- c()
+
+
+for (i in 1:100){
+ if (i %% 3 == 0){
+    lst[i] <- NA
+} else {
+    lst[i] <- i
+}
+
+print(lst)
+```
+
 
 ```python
 # Exercise 2: Sum the even integers from the list below.
@@ -368,6 +388,20 @@ summ = 0
 for i in lst:
     if i % 2 == 0:
         summ += i
+print(summ)
+```
+
+```{r}
+lst <- c(1, 3, 2, 4.5, 7, 8, 10, 3, 5, 4, 7, 3.33)
+
+summ <- 0
+for (i in lst){
+   if (i %% 2 == 0){
+     summ <- summ + i
+   }
+  
+}
+  
 print(summ)
 ```
 
@@ -394,6 +428,20 @@ print(mylist)
 print(zerolist)
 ```
 
+```{r}
+lst <- c(1,2,3,4)
+
+zero_list <- function(alist) {
+   
+  newlist <- alist * 0
+  
+  return(newlist)
+    }
+
+zero_list(lst)
+
+```
+
 _Your cell here._
 
 ```python
@@ -412,6 +460,12 @@ def print_professions(dic):
         
 print_professions(scientists)
 ```
+
+```{r}
+
+```
+```
+
 
 _Your cell here._
 
@@ -434,6 +488,18 @@ Below we have the list comprehensions that we wrote in class in Week 3. For each
 lst = [1, 3, 2, 4.5, 7, 8, 10, 3, 5, 4, 7, 3.33]
 ans = [i**2 for i in lst if type(i) == int] 
 ```
+
+
+```{r}
+lst = c(1, 3, 2, 4.5, 7, 8, 10, 3, 5, 4, 7, 3.33)
+
+lst[!lst%%1]^2
+
+#second option
+
+```
+
+
 _Your cell here._
 
 ```python
@@ -444,6 +510,11 @@ import numpy as np
 x = np.random.normal(0, 1, 100)
 y = ["Positive" if i > 0 else "Negative" for i in x]
 ```
+
+```{r}
+
+```
+
 _Your cell here._
 
 ```{r}
