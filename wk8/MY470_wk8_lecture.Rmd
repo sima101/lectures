@@ -94,7 +94,7 @@ knitr::include_graphics("figs/RJupyter.png")
 
 - To install a package, run directly in R `install.packages("packagename")` (similar to `pip install` and `conda install`, which you run from the terminal, however) 
 
-- To load a package, include `library("package-name")` at the beginning of your script (similar to `import`)
+- To load a package, include `library("packagename")` at the beginning of your script (similar to `import`)
 
 ## Fundamentals and Data Structures
 
@@ -673,7 +673,7 @@ if (x > 4) {
   print(24)
 } else {
   print(17)
-  }
+}
 ```
 
 ##  With an Additional `else if` Part
@@ -684,11 +684,11 @@ x <- 2
 y <- 3
 if (x < y) {
     print(24)
-  } else if (x > y) {
+} else if (x > y) {
     print(18)
-  } else {
+} else {
     print(17)
-  }
+}
 ```
 
 
@@ -871,7 +871,7 @@ Source: https://adv-r.hadley.nz/fp.html
 
 - Python, following more the OOP approach, has many methods and attributes attached to objects (recall week 5 on classes)
 
-- For examples, consider `R` vs. `pandas` in Python. Let's assume we have some data contained in a data frame object called "df"
+- For example, consider `R` vs. `pandas` in Python. Let's assume we have some data contained in a data frame object called "df"
 
 - `colnames(df)` vs. `df.columns`
 
